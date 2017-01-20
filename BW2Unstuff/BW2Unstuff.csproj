@@ -7,7 +7,7 @@
     <ProjectGuid>{1715CCEB-EAE6-44CF-BC9F-01E564E969DF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>BW2Unstuff</RootNamespace>
-    <AssemblyName>BW2Unstuff</AssemblyName>
+    <AssemblyName>unstuff</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -30,6 +30,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BW2Unstuff.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
