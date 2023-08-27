@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
@@ -32,7 +32,7 @@ namespace BW2Unstuff
 
             string inputFileName = args[0];
             string outputDirectory = (args.Length > 1) ? args[1] : Path.GetFileNameWithoutExtension(inputFileName);
-            
+
             if (!File.Exists(inputFileName))
             {
                 Console.WriteLine("Couldn't find specified file: {0}", inputFileName);
@@ -57,11 +57,13 @@ namespace BW2Unstuff
                     Console.WriteLine("Error: Invalid TOC");
                     return 1;
                 }
-                
+
                 var dictionaryLength = (fileLength - contentLength - 4) / Marshal.SizeOf(typeof(FileDictionaryEntry));
 
                 Console.WriteLine("{0} file dictionary entries", dictionaryLength);
                 Console.Write("Reading file dictionary... ");
+
+                fileReader.BaseStream.Seek(contentLength, SeekOrigin.Begin);
 
                 var fileDictionary = new FileDictionaryEntry[dictionaryLength];
                 for (int i = 0; i < dictionaryLength; i++)
